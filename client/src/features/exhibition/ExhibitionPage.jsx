@@ -26,7 +26,18 @@ function Hero() {
         </p>
         <div className="hero-actions">
           <ArrowLink href="#visit">Explore the exhibition</ArrowLink>
-          <a className="quiet-link" href="#categories">Meet the young artists <span aria-hidden="true">↓</span></a>
+          <div className="hero-secondary-actions">
+            <a className="quiet-link" href="#categories">Meet the young artists <span aria-hidden="true">↓</span></a>
+            <a
+              className="register-button"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfKUtOfAO5c-ABYWB24MUW7OXqIYQBqSwlnbSHEqSq08fgf8Q/viewform?usp=sharing&ouid=116387091358906514219"
+              target="_blank"
+              rel="noreferrer"
+            >
+              REGISTER NOW
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
         <div className="hero-footnote">
           <span>BHOPAL, INDIA</span>
