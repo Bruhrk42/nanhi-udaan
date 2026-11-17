@@ -59,6 +59,13 @@
   line-height: 1;
 }
 
+.brand-mark svg,
+.spec-icon svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
 .brand-name {
   display: grid;
   gap: 3px;

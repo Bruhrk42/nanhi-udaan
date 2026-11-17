@@ -1,4 +1,5 @@
 import SiteHeader from './SiteHeader.jsx'
+import EyeIcon from './EyeIcon.jsx'
 import { benefits, categories, exhibition } from './exhibitionData.js'
 import './exhibition.css'
 
@@ -121,7 +122,7 @@ function Categories() {
         </div>
 
         <div className="specification">
-          <span className="spec-icon" aria-hidden="true">✳</span>
+          <span className="spec-icon"><EyeIcon /></span>
           <div>
             <p className="spec-label">MADE BY HAND, MADE TO BE SEEN</p>
             <p>Painted with <strong>{exhibition.medium.toLowerCase()}</strong> · Canvas size <strong>{exhibition.canvasSize}</strong></p>
@@ -190,7 +191,7 @@ function SiteFooter() {
   return (
     <footer className="site-footer content-wrap">
       <a className="brand footer-brand" href="#top">
-        <span className="brand-mark" aria-hidden="true">✳</span>
+        <span className="brand-mark"><EyeIcon /></span>
         <span className="brand-name">
           <strong>नन्ही उड़ान</strong>
           <small>REKHANKAN · BHOPAL</small>

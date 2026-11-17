@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import EyeIcon from './EyeIcon.jsx'
 
 const links = [
   { label: 'The exhibition', href: '#about' },
@@ -14,7 +15,7 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Nanhi Udaan home" onClick={closeMenu}>
-        <span className="brand-mark" aria-hidden="true">✳</span>
+        <span className="brand-mark"><EyeIcon /></span>
         <span className="brand-name">
           <strong>नन्ही उड़ान</strong>
           <small>REKHANKAN · BHOPAL</small>
