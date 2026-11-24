@@ -202,12 +202,12 @@ function SiteFooter() {
   )
 }
 
-function ExhibitionPage() {
+function ExhibitionPage({ onReturnToLogin }) {
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <div className="page-shell">
-        <SiteHeader />
+        <SiteHeader onReturnToLogin={onReturnToLogin} />
         <main id="main-content">
           <Hero />
           <EventStrip />

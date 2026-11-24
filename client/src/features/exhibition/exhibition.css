@@ -114,6 +114,32 @@
   background: #ffda8b;
 }
 
+.nav-login {
+  display: inline-flex;
+  min-height: 45px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 246, 232, 0.42);
+  color: var(--paper);
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.nav-login:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: #ffd88c;
+}
+
+.nav-login span {
+  font-size: 15px;
+}
+
 .nav-cta span,
 .arrow-link span {
   font-size: 16px;
@@ -150,6 +176,7 @@
   position: relative;
   z-index: 1;
   padding-bottom: 12px;
+  animation: home-fade-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .eyebrow,
@@ -175,6 +202,7 @@
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 16px rgba(242, 197, 107, 0.65);
+  animation: home-dot-glow 2.8s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -261,6 +289,18 @@
   display: grid;
   min-height: 590px;
   place-items: center;
+  animation: home-fade-in 850ms 130ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero-art::after {
+  position: absolute;
+  z-index: 2;
+  top: 7%;
+  right: 4%;
+  color: var(--accent);
+  content: '✳';
+  font-size: 26px;
+  animation: home-sparkle 5s ease-in-out infinite;
 }
 
 .art-backdrop {
@@ -270,7 +310,9 @@
   width: 85%;
   height: 83%;
   border: 1px solid rgba(242, 197, 107, 0.72);
+  transform-origin: center;
   transform: rotate(5deg);
+  animation: home-backdrop-drift 9s ease-in-out 800ms infinite;
 }
 
 .poster-frame {
@@ -281,7 +323,9 @@
   padding: 8px;
   background: var(--paper);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+  transform-origin: center;
   transform: rotate(-2.2deg);
+  animation: home-poster-float 6.5s ease-in-out 900ms infinite;
 }
 
 .poster-frame img {
@@ -707,6 +751,56 @@
   color: #ffd88c;
 }
 
+@keyframes home-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes home-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes home-dot-glow {
+  50% {
+    opacity: 0.68;
+    transform: scale(0.86);
+  }
+}
+
+@keyframes home-sparkle {
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1.08);
+  }
+}
+
+@keyframes home-backdrop-drift {
+  50% {
+    transform: rotate(4deg) translateY(-7px);
+  }
+}
+
+@keyframes home-poster-float {
+  50% {
+    transform: rotate(-1.6deg) translateY(-7px);
+  }
+}
+
 @media (max-width: 900px) {
   .content-wrap,
   .site-header,
@@ -765,6 +859,11 @@
 
   .site-header {
     height: 77px;
+  }
+
+  .primary-navigation .nav-login {
+    justify-content: center;
+    margin-top: 10px;
   }
 
   .brand-mark {
@@ -880,6 +979,11 @@
     right: 10%;
     width: 77%;
     height: 84%;
+  }
+
+  .hero-art::after {
+    top: 5%;
+    right: 9%;
   }
 
   .event-strip {

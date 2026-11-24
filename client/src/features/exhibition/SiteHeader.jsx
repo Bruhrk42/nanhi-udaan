@@ -6,7 +6,7 @@ const links = [
   { label: 'Plan your visit', href: '#visit' },
 ]
 
-function SiteHeader() {
+function SiteHeader({ onReturnToLogin }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
@@ -45,6 +45,9 @@ function SiteHeader() {
         <a className="nav-cta" href="#visit" onClick={closeMenu}>
           See you there <span aria-hidden="true">↗</span>
         </a>
+        <button className="nav-login" type="button" onClick={onReturnToLogin}>
+          Back to sign in <span aria-hidden="true">↗</span>
+        </button>
       </nav>
     </header>
   )
