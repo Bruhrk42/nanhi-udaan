@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import ExhibitionPage from './features/exhibition/ExhibitionPage.jsx'
+import PaintingGalleryPage from './features/exhibition/PaintingGalleryPage.jsx'
+import PaintingUploadPage from './features/exhibition/PaintingUploadPage.jsx'
+import MyPaintingsPage from './features/exhibition/MyPaintingsPage.jsx'
 import LoginPage from './features/auth/LoginPage.jsx'
 import {
   endGuestPreview,
@@ -50,6 +53,16 @@ function App() {
     }} />
   }
 
+  const currentPath = window.location.pathname.replace(/\/+$/, '')
+  if (currentPath === '/upload') {
+    return <PaintingUploadPage onReturnToLogin={returnToLogin} />
+  }
+  if (currentPath === '/gallery') {
+    return <PaintingGalleryPage onReturnToLogin={returnToLogin} />
+  }
+  if (currentPath === '/my-paintings') {
+    return <MyPaintingsPage onReturnToLogin={returnToLogin} />
+  }
   return <ExhibitionPage onReturnToLogin={returnToLogin} />
 }
 

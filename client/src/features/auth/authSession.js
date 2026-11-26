@@ -1,5 +1,5 @@
 const guestCookieName = 'nu_guest_preview'
-const unavailableMessage = 'Could not reach the authentication service. Start it with npm run dev:server and check your .env configuration.'
+const unavailableMessage = 'Could not reach the Nanhi Udaan service. Start it with npm run dev:server and check your .env configuration.'
 
 export async function authRequest(path, options = {}) {
   let response

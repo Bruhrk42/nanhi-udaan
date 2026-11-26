@@ -1,0 +1,495 @@
+.gallery-section {
+  padding-block: 112px 120px;
+  background: #fffaf0;
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 34px;
+}
+
+.gallery-heading h2 {
+  margin: 27px 0 0;
+  font-size: clamp(49px, 6.4vw, 88px);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  line-height: 0.98;
+}
+
+.gallery-heading h2 em {
+  color: #436e7b;
+  font-family: var(--display);
+  font-weight: 400;
+}
+
+.gallery-heading > p {
+  max-width: 310px;
+  margin: 0 0 7px;
+  color: #425968;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.gallery-state-error button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 0;
+  color: var(--ink);
+  background: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.gallery-state-error button:hover {
+  transform: translateY(-2px);
+  background: #ffda8b;
+}
+
+.gallery-upload-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 30px;
+  color: #526875;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.gallery-upload-link strong {
+  color: #a74f30;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.gallery-upload-link:hover strong {
+  color: #7d3b25;
+}
+
+.gallery-feedback button {
+  padding: 0;
+  border: 0;
+  color: #a74f30;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.painting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr));
+  gap: 19px;
+  margin-top: 45px;
+}
+
+.painting-card {
+  min-width: 0;
+  background: #fff;
+  box-shadow: 0 9px 28px rgba(38, 61, 76, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.painting-card:hover,
+.painting-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(38, 61, 76, 0.15);
+}
+
+.painting-card-open {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 17px 17px 14px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.painting-card-title {
+  display: -webkit-box;
+  min-height: 46px;
+  overflow: hidden;
+  color: #263d4c;
+  font-family: var(--display);
+  font-size: 21px;
+  line-height: 1.1;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.painting-card-image {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  overflow: hidden;
+  background: #f2ece1;
+}
+
+.painting-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.painting-card:hover .painting-card-image img,
+.painting-card:focus-within .painting-card-image img {
+  transform: scale(1.045);
+}
+
+.painting-view-hint {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  color: #fffaf0;
+  background: rgba(38, 61, 76, 0.88);
+  font-size: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.painting-card:hover .painting-view-hint,
+.painting-card:focus-within .painting-view-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.painting-card-artist {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 7px;
+  padding-top: 11px;
+}
+
+.painting-card-artist > span:first-child {
+  color: #73848a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.painting-card-artist strong {
+  overflow: hidden;
+  color: #425968;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.painting-vote-count {
+  margin-left: auto;
+  color: #73848a;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.gallery-state {
+  display: grid;
+  min-height: 245px;
+  place-content: center;
+  gap: 13px;
+  margin-top: 44px;
+  padding: 30px;
+  border: 1px solid #dfd4c4;
+  color: #526875;
+  text-align: center;
+}
+
+.gallery-state p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gallery-state-error button {
+  justify-self: center;
+}
+
+.gallery-empty > span {
+  color: #bd6946;
+  font-size: 25px;
+}
+
+.gallery-empty h3 {
+  margin: 0;
+  color: #263d4c;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.gallery-feedback {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.gallery-feedback.is-error {
+  color: #9c3d2c;
+}
+
+.painting-lightbox {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(19, 34, 43, 0.78);
+  animation: lightbox-fade-in 180ms ease both;
+}
+
+.painting-dialog {
+  position: relative;
+  display: grid;
+  width: min(100%, 1020px);
+  max-height: min(850px, calc(100dvh - 48px));
+  grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.65fr);
+  overflow: auto;
+  background: #fffaf0;
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.35);
+  animation: lightbox-rise-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.painting-dialog:focus {
+  outline: none;
+}
+
+.painting-dialog-close {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(38, 61, 76, 0.2);
+  border-radius: 50%;
+  color: var(--ink);
+  background: rgba(255, 250, 240, 0.94);
+  cursor: pointer;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.painting-dialog-image {
+  display: grid;
+  min-height: 430px;
+  max-height: min(75vh, 760px);
+  place-items: center;
+  padding: 28px;
+  background: #eee8dc;
+}
+
+.painting-dialog-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: min(75vh, 700px);
+  object-fit: contain;
+}
+
+.painting-dialog-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 45px 31px;
+}
+
+.painting-dialog-byline {
+  margin: 0 0 17px;
+  color: #9c5b40;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.painting-dialog-info h2 {
+  margin: 0;
+  color: #263d4c;
+  font-family: var(--display);
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.painting-dialog-artist {
+  margin: 13px 0 30px;
+  color: #526875;
+  font-size: 14px;
+}
+
+.painting-vote-button {
+  display: flex;
+  width: 100%;
+  min-height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 18px;
+  border: 0;
+  color: var(--ink);
+  background: var(--accent);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.painting-vote-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #ffda8b;
+}
+
+.painting-vote-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.painting-vote-button span {
+  color: #b8623d;
+  font-size: 19px;
+}
+
+.painting-vote-status {
+  width: 100%;
+  padding: 14px;
+  border-left: 3px solid #6f9b7d;
+  color: #315d43;
+  background: #e7f0e5;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.painting-dialog-info .gallery-feedback {
+  margin-top: 12px;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightbox-rise-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 900px) {
+  .gallery-section {
+    padding-block: 85px 95px;
+  }
+
+  .painting-dialog {
+    grid-template-columns: minmax(0, 1.2fr) minmax(235px, 0.8fr);
+  }
+
+  .painting-dialog-image {
+    min-height: 360px;
+    padding: 20px;
+  }
+
+  .painting-dialog-info {
+    padding: 38px 23px;
+  }
+}
+
+@media (max-width: 680px) {
+  .gallery-section {
+    padding-block: 75px 80px;
+  }
+
+  .gallery-heading {
+    display: block;
+  }
+
+  .gallery-heading h2 {
+    font-size: clamp(45px, 12vw, 66px);
+  }
+
+  .gallery-heading > p {
+    max-width: 440px;
+    margin-top: 22px;
+  }
+
+  .painting-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: 13px;
+    margin-top: 32px;
+  }
+
+  .painting-card-open {
+    padding: 13px 13px 10px;
+  }
+
+  .painting-card-title {
+    min-height: 42px;
+    font-size: 19px;
+  }
+
+  .painting-lightbox {
+    padding: 12px;
+  }
+
+  .painting-dialog {
+    display: flex;
+    max-height: calc(100dvh - 24px);
+    flex-direction: column;
+  }
+
+  .painting-dialog-image {
+    min-height: 220px;
+    height: min(55dvh, 460px);
+    padding: 14px;
+  }
+
+  .painting-dialog-image img {
+    max-height: 100%;
+  }
+
+  .painting-dialog-info {
+    padding: 22px 20px 24px;
+  }
+
+  .painting-dialog-byline {
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+
+  .painting-dialog-info h2 {
+    padding-right: 35px;
+    font-size: clamp(29px, 8vw, 42px);
+  }
+
+  .painting-dialog-artist {
+    margin: 8px 0 17px;
+    font-size: 13px;
+  }
+
+  .painting-vote-button {
+    min-height: 50px;
+  }
+}

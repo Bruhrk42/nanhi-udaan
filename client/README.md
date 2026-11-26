@@ -1,6 +1,6 @@
 # Nanhi Udaan
 
-A responsive React landing page for the Nanhi Udaan young artists' painting exhibition in Bhopal. Event copy and category details live in the exhibition feature; the supplied poster is served from `public/images`.
+A responsive React site for the Nanhi Udaan young artists' painting exhibition in Bhopal. It includes a user-submitted painting gallery with full-view artwork and persistent voting. Event copy and category details live in the exhibition feature; the supplied poster is served from `public/images`.
 
 ## Run locally
 
@@ -33,9 +33,9 @@ npm test
 
 ## Structure
 
-- `server/src/` — Express API, SQLite persistence, password hashing, Google token verification, and JWT cookie sessions
-- `src/features/exhibition/` — page sections, navigation, exhibition content, and feature styles
+- `server/src/` — Express API, SQLite persistence, painting uploads and votes, password hashing, Google token verification, and JWT cookie sessions
+- `src/features/exhibition/` — page sections, navigation, exhibition content, dedicated `/gallery`, `/upload`, and `/my-paintings` pages, and feature styles
 - `src/features/auth/` — Google and email/password sign-in and account creation UI
 - `public/images/` — provided exhibition poster and artist icons
 
-The API persists accounts and revocable sessions in SQLite at `server/data/auth.sqlite` by default. Email/password accounts are created directly; passwords are bcrypt-hashed. Google ID tokens are verified by the API and require a Google-verified email. Authentication uses HttpOnly, SameSite=Lax JWT cookies; set `NODE_ENV=production` to enable Secure cookies and set `CLIENT_ORIGIN` to your deployed frontend origin.
+The API persists accounts, revocable sessions, paintings, image data, and votes in SQLite at `server/data/auth.sqlite` by default. The dedicated `/gallery` page displays all paintings; signed-in users can upload PNG, JPEG, or WebP paintings up to 5 MB from `/upload`. `/my-paintings` shows only the signed-in user's uploads and lets them take paintings down. Each account is limited to four paintings and one vote across the gallery; the API enforces these rules. Email/password account passwords are bcrypt-hashed. Google ID tokens are verified by the API and require a Google-verified email. Authentication uses HttpOnly, SameSite=Lax JWT cookies; set `NODE_ENV=production` to enable Secure cookies and set `CLIENT_ORIGIN` to your deployed frontend origin.
