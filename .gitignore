@@ -52,3 +52,5 @@ desktop.ini
 .nyc_output/
 playwright-report/
 test-results/
+# Local database files
+server/data/
